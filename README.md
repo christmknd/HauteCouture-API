@@ -1,6 +1,6 @@
 # HauteCouture-API
 
-Une API qui vous donne différentes informations sur les maisons qui possède le label haute couture
+Une API qui vous donne différentes informations sur les maisons qui possède le label haute couture. Le langage par défaut de cette API est le français.
 
 ## Présentation
 
@@ -23,29 +23,98 @@ Pour rappel , les maisons qui possèdent l'appellation haute couture (appellatio
 
 Le statut haute couture n'existe qu'à Paris, valable qu'un an , et est accordé chaque par le ministère en charge de l'Industrie , sur proposition d'une liste de la Chambre Syndicale de la Haute Couture.
 
-## Fonctionnalités
+## Usages
 
 Voici la liste exhaustif des requêtes que vous pouvez effectuez avec cette API :
 
 - Récupérer la liste toutes les maisons
+
+```bash
+get /api/maisons
+```
+
 - Récupérer tous les maison dans une catégorie spécifique
+
+```bash
+get /api/maisons/category/:category
+```
+
 - Récuperer la liste des maisons par pays
+
+```bash
+get /api/maisons/country/:country
+```
+
 - Récupérer une maison aléatoirement
+
+```bash
+get /api/maisons/random
+```
+
 - Récupérer le nom d'une maison par son ID
+
+```bash
+get /api/maisons/:id/name
+```
+
 - Récupérer le nom d'une maison par le nom du directeur artistique (DA)
+
+```bash
+get /api/maisons/da/:da/name
+```
+
 - Récupérer la liste tous les directeurs artistiques (DA)
+
+```bash
+get /api/directors
+```
+
 - Récupérer le nom d'un directeur artistique (DA) aléatoirement
+
+```bash
+get /api/directors/random
+```
+
 - Récupérer le nom d'un directeur artistique (DA)
+
+```bash
+get /api/directors/:name
+```
+
 - Récuperer la liste des directeurs artistiques d'une catégorie précise
+
+```bash
+get /api/directors/category/:category
+```
+
 - Recupérer la liste des directeurs artistiques par pays
+
+```bash
+get /api/directors/country/:country
+```
+
 - Récupérer toutes les catégories
+
+```bash
+get /api/categories
+```
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+### Français
 
-Please make sure to update tests as appropriate.
+Si vous souhaitez contribuez , vous pouvez ouvrir une issue. Il vous faudra plus de 5 maisons à rajouter pour ouvrir une PR.
+
+Avant de rajouter des maisons, vérifiez bien qu'elles ne sont pas déja dans la base.
+Les maisons doivent avoir les champs suivants : name, category, artistic_director, country
+
+### English
+
+If you want to contribuite , you can open an PR. 5 maison is the minimum to add if you want to open a PR.
+
+Check the data to see if the maisons you want to add are not already there.
+Each maison must have theses fields :
+name, category, artistic_director, country
 
 ## License
 

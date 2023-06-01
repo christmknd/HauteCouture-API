@@ -5,9 +5,6 @@ const axios = require('axios')
 
 const app = express()
 
-app.get('/', (req,res) => {
-    res.json('Welcome to my API')
-})
 
 app.get("/api/maisons", (req, res) => {
     res.json(maisons);
@@ -54,7 +51,7 @@ app.get("/api/maisons/da/:da/name", (req, res) => {
     if (maison) {
         res.json(maison.name);
     } else {
-        res.status(404).send("Maison non trouvée");
+        res.status(404).send("La maison que vous recherché n'existe pas dans notre base");
     }
 });
 
@@ -78,7 +75,7 @@ app.get("/api/directors/:name", (req, res) => {
     if (maison) {
         res.json(maison.artistic_director);
     } else {
-        res.status(404).send("Directeur artistique non trouvé");
+        res.status(404).send(" Le directeur artistique que vous cherché n'existe pas dans notre base. \n Sa maison ne possède pas le label Haute Couture.");
     }
 });
 
