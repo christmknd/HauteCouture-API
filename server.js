@@ -9,6 +9,102 @@ app.get('/', (req,res) => {
     res.json('Welcome to my API')
 })
 
+app.get("/api/maisons", (req, res) => {
+    res.json(maisons);
+});
+
+app.get("/api/maisons/category/:category", (req, res) => {
+    const category = req.params.category;
+    const filteredMaisons = maisons.filter(
+        (maison) => maison.category === category
+    );
+    res.json(filteredMaisons);
+});
+
+  // filter => retourne un array avec une condition spécifique ( ici le pays )
+app.get("/api/maisons/country/:country", (req, res) => {
+    const country = req.params.country;
+    const filteredMaisons = maisons.filter(
+        (maison) => maison.country === country
+    );
+    res.json(filteredMaisons);
+});
+
+app.get("/api/maisons/random", (req, res) => {
+    const randomMaison = maisons[Math.floor(Math.random() * maisons.length)];
+    res.json(randomMaison);
+});
+
+app.get("/api/maisons/:id/name", (req, res) => {
+    const id = parseInt(req.params.id);
+    const maison = maisons.find((maison) => maison.id === id);
+    if (maison) {
+        res.json(maison.name);
+    } else {
+        res.status(404).send("Maison non trouvée");
+    }
+});
+
+// find => permet de trouver un élement du tableau qui respecte la condtion donnée (ici le nom de la maison) 
+app.get("/api/maisons/da/:da/name", (req, res) => {
+    const da = req.params.da;
+    const maison = maisons.find(
+        (maison) => maison.artisticDirector === da
+    );
+    if (maison) {
+        res.json(maison.name);
+    } else {
+        res.status(404).send("Maison non trouvée");
+    }
+});
+
+// SET => liste de valeurs UNIQUES 
+app.get("/api/directors", (req, res) => {
+    const artisticDirectors = [...new Set(maisons.map((maison) => maison.artisticDirector))];
+    res.json(artisticDirectors);
+});
+
+app.get("/api/directors/random", (req, res) => {
+    const artisticDirectors = [...new Set(maisons.map((maison) => maison.artisticDirector))];
+    const randomDA = artisticDirectors[Math.floor(Math.random() * artisticDirectors.length)];
+    res.json(randomDA);
+});
+
+app.get("/api/directors/:name", (req, res) => {
+    const name = req.params.name;
+    const maison = maisons.find(
+        (maison) => maison.artisticDirector.toLowerCase() === name.toLowerCase()
+    );
+    if (maison) {
+        res.json(maison.artisticDirector);
+    } else {
+        res.status(404).send("Directeur artistique non trouvé");
+    }
+});
+
+app.get("/api/directors/category/:category", (req, res) => {
+    const category = req.params.category;
+    const artisticDirectors = [...new Set(maisons
+        .filter((maison) => maison.category === category)
+        .map((maison) => maison.artisticDirector)
+    )];
+    res.json(artisticDirectors);
+});
+
+app.get("/api/directors/country/:country", (req, res) => {
+    const country = req.params.country;
+    const artisticDirectors = [...new Set(maisons
+        .filter((maison) => maison.country === country)
+        .map((maison) => maison.artisticDirector)
+    )];
+    res.json(artisticDirectors);
+});
+
+app.get("/api/categories", (req, res) => {
+    const categories = [...new Set(maisons.map((maison) => maison.category))];
+    res.json(categories);
+});
+
 app.listen(PORT , () => {
     console.log(`Server running on http://localhost:${PORT}`)
 })

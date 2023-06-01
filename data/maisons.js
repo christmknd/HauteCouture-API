@@ -1,278 +1,278 @@
-module.exports = [
-    // Membres permanents
+const maisons = [
+    // Maisons permanentes
 
     {
         id:1,
-        member: "Adeline André",
-        category: "permanent",
+        maison: "Adeline André",
+        category: "permanente",
         artistic_director : "Adeline André",
         country: "France"
     },
     {
         id:2,
-        member: "Alexandre Vauthier",
-        category: "permanent",
+        maison: "Alexandre Vauthier",
+        category: "permanente",
         artistic_director : "Alexandre Vauthier",
         country: "France"
     },
     {
         id:3,
-        member: "Alexis Mabille",
-        category: "permanent",
+        maison: "Alexis Mabille",
+        category: "permanente",
         artistic_director : "Alexis Mabille",
         country: "France"
     },
     {
         id:4,
-        member: "Bouchra Jarrar",
-        category: "permanent",
+        maison: "Bouchra Jarrar",
+        category: "permanente",
         artistic_director : "Bouchra Jarrar",
         country: "France"
     },
     {
         id:5,
-        member: "Chanel",
-        category: "permanent",
+        maison: "Chanel",
+        category: "permanente",
         artistic_director : "Virginie Viard",
         country: "France"
     },
     {
         id:6,
-        member: "Christian Dior",
-        category: "permanent",
+        maison: "Christian Dior",
+        category: "permanente",
         artistic_director : "Maria Grazia Chuiri",
         country: "France"
     },
     {
         id:7,
-        member: "Franck Sorbier",
-        category: "permanent",
+        maison: "Franck Sorbier",
+        category: "permanente",
         artistic_director : "Franck Sorbier",
         country: "France"
     },
     {
         id:8,
-        member: "Giambattista Valli",
-        category: "permanent",
+        maison: "Giambattista Valli",
+        category: "permanente",
         artistic_director : "Giambattista Valli",
     },
     {
         id:9,
-        member: "Givenchy",
-        category: "permanent",
+        maison: "Givenchy",
+        category: "permanente",
         artistic_director : "Matthiew Williams",
         country: "France"
     },
     {
         id:10,
-        member: "Jean Paul Gaultier",
-        category: "permanent",
+        maison: "Jean Paul Gaultier",
+        category: "permanente",
         artistic_director : "Julien Dossena",
         country: "France"
 
     },
     {
         id:11,
-        member: "Julien Fournié",
-        category: "permanent",
+        maison: "Julien Fournié",
+        category: "permanente",
         artistic_director : "Julien Fournié",
         country: "France"
     },
     {
         id:12,
-        member: "Maison Martin Margiela",
-        category: "permanent",
+        maison: "Maison Martin Margiela",
+        category: "permanente",
         artistic_director : "John Galliano",
         country: "France"
     },
     {
         id:13,
-        member: "Maurizio Galante",
-        category: "permanent",
+        maison: "Maurizio Galante",
+        category: "permanente",
         artistic_director : "Maurizio Galante",
         country:"Italie"
     },
     {
         id:14,
-        member: "Rabih Kayrouz",
-        category: "permanent",
+        maison: "Rabih Kayrouz",
+        category: "permanente",
         artistic_director : "Rabih Kayrouz",
         country:"France"
     },
     {
         id:15,
-        member: "Schiaparelli",
-        category: "permanent",
+        maison: "Schiaparelli",
+        category: "permanente",
         artistic_director : "Daniel Roseberry",
         country:"France"
     },
     {
         id:16,
-        member: "Stéphane Rolland",
-        category: "permanent",
+        maison: "Stéphane Rolland",
+        category: "permanente",
         artistic_director : "Stéphane Rolland",
         country: "France"
     },
 
-    // membres correspondants
+    // maisons correspondantes
     {
         id:17,
-        member: "Atelier Versace",
-        category: "correspondant",
+        maison: "Versace",
+        category: "correspondante",
         artistic_director : "Anthony Vaccarello",
         country:"Italie"
     },
     {
         id:18,
-        member: "Azzedine Alaïa",
-        category: "correspondant",
+        maison: "Azzedine Alaïa",
+        category: "correspondante",
         artistic_director : "Pieter Mulier",
         country: "Tunisie/France"
     },
     {
         id:19,
-        member: "Elie Saab",
-        category: "correspondant",
+        maison: "Elie Saab",
+        category: "correspondante",
         artistic_director : "Elie Saab",
         country: "Liban"
 
     },
     {
         id:20,
-        member: "Fendi",
-        category: "correspondant",
+        maison: "Fendi",
+        category: "correspondante",
         artistic_director : "Kim Jones",
         country:"Italie"
     },
     {
         id:21,
-        member: "Giorgio Armani privé",
-        category: "correspondant",
+        maison: "Giorgio Armani privé",
+        category: "correspondante",
         artistic_director : "Giorgio Armani",
         country:"Italie"
     },
     {
         id:22,
-        member: "Iris Van Herpen",
-        category: "correspondant",
+        maison: "Iris Van Herpen",
+        category: "correspondante",
         artistic_director : "Iris Van Herpen",
         country:"Pays-Bas"
     },
     {
         id:23,
-        member: "Ulyana Sergeenko",
-        category: "correspondant",
+        maison: "Ulyana Sergeenko",
+        category: "correspondante",
         artistic_director : "Ulyana Sergeenko",
         country:"Russie"
     },
     {
         id:24,
-        member: "Valentino",
-        category: "correspondant",
+        maison: "Valentino",
+        category: "correspondante",
         artistic_director : "Pierpaolo Piccioli",
         country:"Italie"
     },
 
     {
         id:25,
-        member: "Viktor & Rolf",
-        category: "correspondant",
+        maison: "Viktor & Rolf",
+        category: "correspondante",
         artistic_director : "Victor Horsting & Rolf Snoeron",
         country:"Pays-Bas"
     },
 
-    //membre invité
+    //maison invitées
     {
         id:26,
-        member: "Aelis",
-        category:"invité",
+        maison: "Aelis",
+        category:"invitée",
         artistic_director : "Sofia Crociani",
         country:"Italie"
     },
     {
         id:27,
-        member: "Christophe Josse",
-        category:"invité",
+        maison: "Christophe Josse",
+        category:"invitée",
         artistic_director : "Christophe Josse",
         country:"France"
     },
     {
         id:28,
-        member: "Gaurav Gupta",
-        category:"invité",
+        maison: "Gaurav Gupta",
+        category:"invitée",
         artistic_director : "Gaurav Gupta",
         country:"Inde"
     },
     {
         id:29,
-        member: "Georges Hobeika",
-        category:"invité",
+        maison: "Georges Hobeika",
+        category:"invitée",
         artistic_director : "Georges Hobeika & Jad Hobeika",
         country:"Liban"
     },
     {
         id:30,
-        member: "Imane Ayissi",
-        category:"invité",
+        maison: "Imane Ayissi",
+        category:"invitée",
         artistic_director : "Imane Ayissi",
         country:"Cameroun/France"
     },
     {
         id:31,
-        member: "Juana Martin",
-        category:"invité",
+        maison: "Juana Martin",
+        category:"invitée",
         artistic_director : "Juana Martin",
         country:"Espagne"
     },
     {
         id:32,
-        member: "Julie de Libran",
-        category:"invité",
+        maison: "Julie de Libran",
+        category:"invitée",
         artistic_director : "Julie de Libran",
         country:"France"
     },
     {
         id:33,
-        member: "Maison Sara Chraibi",
-        category:"invité",
+        maison: "Maison Sara Chraibi",
+        category:"invitée",
         artistic_director : "Amira Azzouzi",
         country:"Maroc"
     },
     {
         id:34,
-        member: "Rahul Mishra",
-        category:"invité",
+        maison: "Rahul Mishra",
+        category:"invitée",
         artistic_director : "Rahul Mishra",
         country:"Inde"
     },
     {
         id:35,
-        member: "Robert Wun",
-        category:"invité",
+        maison: "Robert Wun",
+        category:"invitée",
         artistic_director : "Robert Wun",
         country:"Angleterre"
     },
     {
         id:36,
-        member: "RVDK Ronald Van Der Kemp",
-        category:"invité",
+        maison: "RVDK Ronald Van Der Kemp",
+        category:"invitée",
         artistic_director : "Ronald Van Der Kemp",
         country:"Pays-Bas"
     },
     {
         id:37,
-        member: "Yuima Nakazato",
-        category:"invité",
+        maison: "Yuima Nakazato",
+        category:"invitée",
         artistic_director : "Yuima Nakazato",
         country:"Japon"
     },
     {
         id:38,
-        member: "Zuhair Murad",
-        category:"invité",
+        maison: "Zuhair Murad",
+        category:"invitée",
         artistic_director : "Zuhair Murad",
         country:"Liban"
     },
-    
-    
 ]
+
+module.exports = maisons;
