@@ -41,7 +41,7 @@ app.get("/api/maisons/:id/name", (req, res) => {
     if (maison) {
         res.json(maison.name);
     } else {
-        res.status(404).send("Maison non trouvée");
+        res.status(404).send("L'ID que vous cherchez n'existe pas dans notre base");
     }
 });
 
@@ -49,7 +49,7 @@ app.get("/api/maisons/:id/name", (req, res) => {
 app.get("/api/maisons/da/:da/name", (req, res) => {
     const da = req.params.da;
     const maison = maisons.find(
-        (maison) => maison.artisticDirector === da
+        (maison) => maison.artistic_director === da
     );
     if (maison) {
         res.json(maison.name);
@@ -60,23 +60,23 @@ app.get("/api/maisons/da/:da/name", (req, res) => {
 
 // SET => liste de valeurs UNIQUES 
 app.get("/api/directors", (req, res) => {
-    const artisticDirectors = [...new Set(maisons.map((maison) => maison.artisticDirector))];
-    res.json(artisticDirectors);
+    const artistic_directors = [...new Set(maisons.map((maison) => maison.artistic_director))];
+    res.json(artistic_directors);
 });
 
 app.get("/api/directors/random", (req, res) => {
-    const artisticDirectors = [...new Set(maisons.map((maison) => maison.artisticDirector))];
-    const randomDA = artisticDirectors[Math.floor(Math.random() * artisticDirectors.length)];
+    const artistic_directors = [...new Set(maisons.map((maison) => maison.artistic_director))];
+    const randomDA = artistic_directors[Math.floor(Math.random() * artistic_directors.length)];
     res.json(randomDA);
 });
 
 app.get("/api/directors/:name", (req, res) => {
     const name = req.params.name;
     const maison = maisons.find(
-        (maison) => maison.artisticDirector.toLowerCase() === name.toLowerCase()
+        (maison) => maison.artistic_director.toLowerCase() === name.toLowerCase()
     );
     if (maison) {
-        res.json(maison.artisticDirector);
+        res.json(maison.artistic_director);
     } else {
         res.status(404).send("Directeur artistique non trouvé");
     }
@@ -84,20 +84,20 @@ app.get("/api/directors/:name", (req, res) => {
 
 app.get("/api/directors/category/:category", (req, res) => {
     const category = req.params.category;
-    const artisticDirectors = [...new Set(maisons
+    const artistic_directors = [...new Set(maisons
         .filter((maison) => maison.category === category)
-        .map((maison) => maison.artisticDirector)
+        .map((maison) => maison.artistic_director)
     )];
-    res.json(artisticDirectors);
+    res.json(artistic_directors);
 });
 
 app.get("/api/directors/country/:country", (req, res) => {
     const country = req.params.country;
-    const artisticDirectors = [...new Set(maisons
+    const artistic_directors = [...new Set(maisons
         .filter((maison) => maison.country === country)
-        .map((maison) => maison.artisticDirector)
+        .map((maison) => maison.artistic_director)
     )];
-    res.json(artisticDirectors);
+    res.json(artistic_directors);
 });
 
 app.get("/api/categories", (req, res) => {
