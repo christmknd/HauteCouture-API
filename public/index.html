@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HauteCouture-API</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="left-menu">
+            <li><a href="#presentation">Présentation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#contribuiting">Contribuer</a></li>
+        </div>
+        <div class="right-menu">
+            <li>HauteCouture-API</li>
+        </div>
+        </ul>
+    </nav>
+</header>
+
+<h1>HauteCouture-API</h1>
+
+<h2>Présentation</h2>
+
+<section id="presentation">
+    <p>
+        Une API qui vous donne différentes informations sur les maisons qui possède le label haute couture. Le langage par défaut de cette API est le français. <br>
+        La source principale des informations de cette API vienne de la <a href="http://www.fhcm.paris/fr">Fédération de la Haute Couture et de la Mode</a>. <br> 
+        En cas d'erreurs ou d'oubli de ma part , qu'elle n'hésite pas à me contacter (mon adresse mail est disponible sur mon profil Github) <br>
+        Les maisons sont classés en trois catégories :
+    </p>  
+    
+    <ul>
+        <li>les membres permanents</li>
+        <li>les membres correspondants</li>
+        <li>les membres invités</li>
+    </ul>
+    
+    <p>Pour rappel , les maisons qui possèdent l'appellation haute couture (appellation juridiquement controlé), sont des maisons de luxe qui correspondent aux critères suivants :</p>
+    
+    <ul>
+        <li>Vêtements réalisés sur mesure</li>
+        <li>Travail à la main</li>
+        <li>Avoir un atelier de maison de couture, avec un atelier flou et un atelier tailleur</li>
+        <li>Les ateliers doivent compter une dizaine de personnes</li>
+        <li>Défiler deux fois par an , avec minimu 25 modèles par collection</li>
+        <li>Pour être accepté dans la liste des membres permanents, elle doit être déja inscrit en tant qu'invité depuis 4 ans et être parainée par une autre maison de couture</li>
+    </ul>
+    
+    <p>Le statut haute couture n'existe qu'à Paris, valable qu'un an , et est accordé chaque par le ministère en charge de l'Industrie , sur proposition d'une liste de la Chambre Syndicale de la Haute Couture.</p>
+    
+</section>
+
+<h2>Usage</h2>
+
+<section id="usage">
+
+    <p>Voici la liste exhaustif des requêtes que vous pouvez effectuez avec cette API :</p>  
+
+
+    Récupérer la liste toutes les maisons 
+    
+    <li> get /api/maisons</li>
+    
+    Récupérer tous les maison dans une catégorie spécifique </li> <br> <br>
+    
+    <li> get /api/maisons/category/:{category} </li> <br> <br>
+    
+    
+    Récuperer la liste des maisons par pays 
+    
+    <li>get /api/maisons/country/:{country} </li> <br> <br>
+    
+    Récupérer une maison aléatoirement 
+    
+    <li>get /api/maisons/random </li> <br> <br>
+    
+    
+    Récupérer le nom d'une maison par son ID 
+    
+    <li>get /api/maisons/:{id}/name </li> <br> <br>
+    
+    
+    Récupérer le nom d'une maison par le nom du directeur artistique (DA) 
+    
+    <li>get /api/maisons/da/:{da}/name </li> <br> <br>
+    
+    
+    Récupérer la liste tous les directeurs artistiques (DA) 
+    
+    <li>get /api/directors </li> <br> <br>
+    
+    
+    Récupérer le nom d'un directeur artistique (DA) aléatoirement 
+    
+    <li>get /api/directors/random </li> <br> <br>
+    
+    
+    Récupérer le nom d'un directeur artistique (DA) 
+    
+    <li>get /api/directors/:{name} </li> <br> <br>
+    
+    
+    Récuperer la liste des directeurs artistiques d'une catégorie précise 
+    
+    <li>get /api/directors/category/:{category} </li> <br> <br>
+    
+    
+    Recupérer la liste des directeurs artistiques par pays 
+    
+    <li>get /api/directors/country/:{country} </li> <br> <br>
+    
+    
+    Récupérer toutes les catégories 
+    
+    <li>get /api/categories</li> <br> <br> 
+    
+</section>
+
+
+
+<h2>Contributer</h2>
+
+<section id="contribuiting">
+
+    <h3>Français</h3> 
+
+    <p>Si vous souhaitez contribuez , vous pouvez ouvrir une issue. Il vous faudra plus de 5 maisons à rajouter pour ouvrir une PR.</p> 
+
+    <p>Avant de rajouter des maisons, vérifiez bien qu'elles ne sont pas déja dans la base.</p> 
+    <p>Les maisons doivent avoir les champs suivants : name, category, artistic_director, country</p> 
+
+    <h3>English</h3> 
+
+    <p>If you want to contribuite , you can open an PR. 5 maison is the minimum to add if you want to open a PR </p>
+    
+    <p> Check the data to see if the maisons you want to add are not already there.</p>
+    <p>Each maison must have theses fields : name, category, artistic_director, country</p> 
+        
+</section>
+
+
+
+
+</body>
+</html>

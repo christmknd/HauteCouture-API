@@ -2,9 +2,18 @@
 const PORT = 5000
 const express = require('express')
 const axios = require('axios')
+const path = require('path')
+
+require('./data/maisons')
 
 const app = express()
 
+app.use(express.static(path.join(__dirname, "public")));
+
+
+app.get('/', (req,res) => {
+    res.sendFile(path.join(__dirname,"public/index.html"))
+})
 
 app.get("/api/maisons", (req, res) => {
     res.json(maisons);
