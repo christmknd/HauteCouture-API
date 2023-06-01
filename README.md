@@ -36,13 +36,13 @@ get /api/maisons
 - Récupérer tous les maison dans une catégorie spécifique
 
 ```bash
-get /api/maisons/category/{category}
+get /api/maisons/category/:{category}
 ```
 
 - Récuperer la liste des maisons par pays
 
 ```bash
-get /api/maisons/country/{country}
+get /api/maisons/country/:{country}
 ```
 
 - Récupérer une maison aléatoirement
@@ -54,13 +54,13 @@ get /api/maisons/random
 - Récupérer le nom d'une maison par son ID
 
 ```bash
-get /api/maisons/{id}/name
+get /api/maisons/:{id}/name
 ```
 
 - Récupérer le nom d'une maison par le nom du directeur artistique (DA)
 
 ```bash
-get /api/maisons/da/{da}/name
+get /api/maisons/da/:{da}/name
 ```
 
 - Récupérer la liste tous les directeurs artistiques (DA)
@@ -78,19 +78,19 @@ get /api/directors/random
 - Récupérer le nom d'un directeur artistique (DA)
 
 ```bash
-get /api/directors/{name}
+get /api/directors/:{name}
 ```
 
 - Récuperer la liste des directeurs artistiques d'une catégorie précise
 
 ```bash
-get /api/directors/category/{category}
+get /api/directors/category/:{category}
 ```
 
 - Recupérer la liste des directeurs artistiques par pays
 
 ```bash
-get /api/directors/country/{country}
+get /api/directors/country/:{country}
 ```
 
 - Récupérer toutes les catégories
