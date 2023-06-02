@@ -3,11 +3,13 @@ const PORT = 5000
 const express = require('express')
 const axios = require('axios')
 const path = require('path')
+const cors = require('cors')
+
 
 const maisons = require('./data/maisons')
 
 const app = express()
-
+app.use(cors())
 app.use(express.static(path.join(__dirname, "public")));
 
 
@@ -17,99 +19,86 @@ app.get('/', (req,res) => {
 
 
 app.get("/api/maisons", (req, res) => {
-    res.json(maisons);
+    res.set("Content-Type", "application/json")
+    res.json(maisons).status(200);
 });
 
 app.get("/api/maisons/category/:category", (req, res) => {
+    res.set("Content-Type", "application/json")
     const category = req.params.category;
     const filteredMaisons = maisons.filter(
         (maison) => maison.category === category
     );
-    res.json(filteredMaisons);
+    res.json(filteredMaisons).status(200);
 });
 
   // filter => retourne un array avec une condition spécifique ( ici le pays )
 app.get("/api/maisons/country/:country", (req, res) => {
+    res.set("Content-Type", "application/json")
     const country = req.params.country;
     const filteredMaisons = maisons.filter(
         (maison) => maison.country === country
     );
-    res.json(filteredMaisons);
+    res.json(filteredMaisons).status(200);
 });
 
 app.get("/api/maisons/random", (req, res) => {
+    res.set("Content-Type", "application/json")
     const randomMaison = maisons[Math.floor(Math.random() * maisons.length)];
-    res.json(randomMaison);
+    res.json(randomMaison).status(200);
 });
 
-app.get("/api/maisons/:id/name", (req, res) => {
+app.get("/api/maisons/:id", (req, res) => {
+    res.set("Content-Type", "application/json")
     const id = parseInt(req.params.id);
     const maison = maisons.find((maison) => maison.id === id);
     if (maison) {
-        res.json(maison.name);
+        res.json(maison).status(200);
     } else {
         res.status(404).send("L'ID que vous cherchez n'existe pas dans notre base");
     }
 });
 
-// find => permet de trouver un élement du tableau qui respecte la condtion donnée (ici le nom de la maison) 
-app.get("/api/maisons/da/:da/name", (req, res) => {
-    const da = req.params.da;
-    const maison = maisons.find(
-        (maison) => maison.artistic_director === da
-    );
-    if (maison) {
-        res.json(maison.name);
-    } else {
-        res.status(404).send("La maison que vous recherché n'existe pas dans notre base");
-    }
-});
 
 // SET => liste de valeurs UNIQUES 
 app.get("/api/directors", (req, res) => {
+    res.set("Content-Type", "application/json")
     const artistic_directors = [...new Set(maisons.map((maison) => maison.artistic_director))];
-    res.json(artistic_directors);
+    res.json(artistic_directors).status(200);
 });
 
 app.get("/api/directors/random", (req, res) => {
+    res.set("Content-Type", "application/json")
     const artistic_directors = [...new Set(maisons.map((maison) => maison.artistic_director))];
     const randomDA = artistic_directors[Math.floor(Math.random() * artistic_directors.length)];
-    res.json(randomDA);
+    res.json(randomDA).status(200);
 });
 
-app.get("/api/directors/:name", (req, res) => {
-    const name = req.params.name;
-    const maison = maisons.find(
-        (maison) => maison.artistic_director.toLowerCase() === name.toLowerCase()
-    );
-    if (maison) {
-        res.json(maison.artistic_director);
-    } else {
-        res.status(404).send(" Le directeur artistique que vous cherché n'existe pas dans notre base. \n Sa maison ne possède pas le label Haute Couture.");
-    }
-});
 
 app.get("/api/directors/category/:category", (req, res) => {
+    res.set("Content-Type", "application/json");
     const category = req.params.category;
     const artistic_directors = [...new Set(maisons
         .filter((maison) => maison.category === category)
         .map((maison) => maison.artistic_director)
     )];
-    res.json(artistic_directors);
+    res.json(artistic_directors).status(200);
 });
 
 app.get("/api/directors/country/:country", (req, res) => {
+    res.set("Content-Type", "application/json");
     const country = req.params.country;
     const artistic_directors = [...new Set(maisons
         .filter((maison) => maison.country === country)
         .map((maison) => maison.artistic_director)
     )];
-    res.json(artistic_directors);
+    res.json(artistic_directors).status(200);
 });
 
 app.get("/api/categories", (req, res) => {
+    res.set("Content-Type", "application/json");
     const categories = [...new Set(maisons.map((maison) => maison.category))];
-    res.json(categories);
+    res.json(categories).status(200);
 });
 
 app.listen(PORT , () => {

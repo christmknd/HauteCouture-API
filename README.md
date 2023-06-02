@@ -64,13 +64,7 @@ get /api/maisons/random
 - Récupérer le nom d'une maison par son ID
 
 ```bash
-get /api/maisons/:{id}/name
-```
-
-- Récupérer le nom d'une maison par le nom du directeur artistique (DA)
-
-```bash
-get /api/maisons/da/:{da}/name
+get /api/maisons/:{id}
 ```
 
 - Récupérer la liste tous les directeurs artistiques (DA)
@@ -83,12 +77,6 @@ get /api/directors
 
 ```bash
 get /api/directors/random
-```
-
-- Récupérer le nom d'un directeur artistique (DA)
-
-```bash
-get /api/directors/:{name}
 ```
 
 - Récuperer la liste des directeurs artistiques d'une catégorie précise
