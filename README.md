@@ -2,6 +2,8 @@
 
 Une API qui vous donne différentes informations sur les maisons qui possède le label haute couture. Le langage par défaut de cette API est le français.
 
+Cette api est publié sur RapidAPI à l'adresse suivante : [https://rapidapi.com/christmknd/api/hautecouture-api1](https://rapidapi.com/christmknd/api/hautecouture-api1)
+
 ## Présentation
 
 La source principale des informations de cette API vienne de la [Fédération de la Haute Couture et de la Mode](https://www.fhcm.paris/fr). En cas d'erreurs ou d'oubli de ma part , qu'elle n'hésite pas à me contacter (mon adresse mail est disponible sur mon profil Github)
@@ -24,6 +26,14 @@ Pour rappel , les maisons qui possèdent l'appellation haute couture (appellatio
 Le statut haute couture n'existe qu'à Paris, valable qu'un an , et est accordé chaque par le ministère en charge de l'Industrie , sur proposition d'une liste de la Chambre Syndicale de la Haute Couture.
 
 ## Usages
+
+Pour lancer le projet , tapez la commande suivante,
+
+```bash
+npm start
+```
+
+Aller sur votre navigateur
 
 Voici la liste exhaustif des requêtes que vous pouvez effectuez avec cette API :
 
