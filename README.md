@@ -27,13 +27,19 @@ Le statut haute couture n'existe qu'à Paris, valable qu'un an , et est accordé
 
 ## Usages
 
-Pour lancer le projet , tapez la commande suivante,
+### Lancement du projet
+
+Pour lancer le projet en local , tapez la commande suivante,
 
 ```bash
 npm start
 ```
 
-Aller sur votre navigateur
+Aller sur votre navigateur et tapez http://localhost:5000/
+
+Vous pouvez aussi tester toutes ces requêtes directement sur le site en production : https://haute-couture-api.vercel.app/
+
+### Requêtes
 
 Voici la liste exhaustif des requêtes que vous pouvez effectuez avec cette API :
 
@@ -46,13 +52,13 @@ get /api/maisons
 - Récupérer tous les maison dans une catégorie spécifique
 
 ```bash
-get /api/maisons/category/:{category}
+get /api/maisons/category/{category}
 ```
 
 - Récuperer la liste des maisons par pays
 
 ```bash
-get /api/maisons/country/:{country}
+get /api/maisons/country/{country}
 ```
 
 - Récupérer une maison aléatoirement
@@ -64,7 +70,7 @@ get /api/maisons/random
 - Récupérer le nom d'une maison par son ID
 
 ```bash
-get /api/maisons/:{id}
+get /api/maisons/{id}
 ```
 
 - Récupérer la liste tous les directeurs artistiques (DA)
@@ -88,10 +94,10 @@ get /api/directors/category/:{category}
 - Recupérer la liste des directeurs artistiques par pays
 
 ```bash
-get /api/directors/country/:{country}
+get /api/directors/country/{country}
 ```
 
-- Récupérer toutes les catégories
+- Récupérer toutes les catégories de maisons
 
 ```bash
 get /api/categories

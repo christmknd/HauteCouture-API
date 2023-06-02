@@ -1,7 +1,7 @@
 body {
     margin-left: auto;
     margin-right: auto;
-    max-width: 85%;
+    max-width: 90%;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
@@ -10,7 +10,7 @@ body {
 
 @media (max-width: 767px) {
     body {
-        max-width: 90%;
+        max-width: 95%;
     }
   }
 
@@ -20,18 +20,46 @@ a{
 }
 
 a:hover {
-    color: #535bf2;
+    color: goldenrod;
 }
+
+/* FONT */
+h1,h2{
+    font-family: "Georgia Pro" ;
+}
+
+h3 {
+    font-family: "Palatino";
+}
+
+p{
+    font-family: 'Helvetica Neue';
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+h1,section {
+    margin-bottom: 75px;
+}
+
+section {
+    background: linear-gradient(#ffffff,#f1f1f1);
+}
+
+/* NAV */
 
 nav{
     overflow: hidden;
     position: relative;
-    margin-bottom: 25px;
-    padding-bottom: 25px;}
+    background: linear-gradient(#ffffff,#f0f5f5);
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+}
     
 nav ul {
     
-    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -52,6 +80,7 @@ nav li  {
     list-style-type: none;
     text-decoration: none;
     margin: 5px;
+    font-family: 'Helvetica Neue';
 }
     
 nav li a {
@@ -61,7 +90,7 @@ nav li a {
     
 nav li a:hover {
 
-    color: #535bf2;
+    color: goldenrod;
 }
 
 h1{
@@ -70,4 +99,34 @@ h1{
     
 #usage li {
     color:grey
+}
+
+/* FOOTER */
+
+footer {
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f5f5;
+    display: flex;
+    margin-top: 25px;
+    padding-top: 25px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer li {
+
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    font-family: 'Helvetica Neue';
+    
+}
+
+footer li a  {
+   
+    margin: 5px;
+    color: black;
 }
