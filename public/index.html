@@ -28,68 +28,76 @@
 <h2>Présentation</h2>
 
 <section id="presentation">
-    <p>
-        Une API qui vous donne différentes informations sur les maisons qui possède le label haute couture. Le langage par défaut de cette API est le français. <br> 
-        Cette api est publié sur RapidAPI à l'adresse suivante : <a href="https://rapidapi.com/christmknd/api/hautecouture-api1">https://rapidapi.com/christmknd/api/hautecouture-api1</a>. <br> <br>
-        La source principale des informations de cette API vienne de la <a href="http://www.fhcm.paris/fr">Fédération de la Haute Couture et de la Mode</a>. <br> 
-        En cas d'erreurs ou d'oubli de ma part , qu'elle n'hésite pas à me contacter (mon adresse mail est disponible sur mon profil Github) <br>
-        Les maisons sont classés en trois catégories :
-    </p>  
+            <p>
+                Une API qui vous donne différentes informations sur les maisons qui possède le label haute couture. Le langage par défaut de cette API est le français. <br> 
+                Cette api est publié sur RapidAPI à l'adresse suivante : <a href="https://rapidapi.com/christmknd/api/hautecouture-api1">https://rapidapi.com/christmknd/api/hautecouture-api1</a>. <br> <br>
+                La source principale des informations de cette API vienne de la <a href="http://www.fhcm.paris/fr">Fédération de la Haute Couture et de la Mode</a>. <br> 
+                En cas d'erreurs ou d'oubli de ma part , qu'elle n'hésite pas à me contacter (mon adresse mail est disponible sur mon profil Github) <br>
+                Les maisons sont classés en trois catégories :
+            </p>  
+            
+            <ul>
+                <li>les membres permanents</li>
+                <li>les membres correspondants</li>
+                <li>les membres invités</li>
+            </ul>
+
+            <p>Pour rappel , les maisons qui possèdent l'appellation haute couture (appellation juridiquement controlé), sont des maisons de luxe qui correspondent aux critères suivants :</p>
     
-    <ul>
-        <li>les membres permanents</li>
-        <li>les membres correspondants</li>
-        <li>les membres invités</li>
-    </ul>
+            <ul>
+                <li>Vêtements réalisés sur mesure</li>
+                <li>Travail à la main</li>
+                <li>Avoir un atelier de maison de couture, avec un atelier flou et un atelier tailleur</li>
+                <li>Les ateliers doivent compter une dizaine de personnes</li>
+                <li>Défiler deux fois par an , avec minimu 25 modèles par collection</li>
+                <li>Pour être accepté dans la liste des membres permanents, elle doit être déja inscrit en tant qu'invité depuis 4 ans et être parainée par une autre maison de couture</li>
+            </ul>
+            
+            <p>Le statut haute couture n'existe qu'à Paris, valable qu'un an , et est accordé chaque par le ministère en charge de l'Industrie , sur proposition d'une liste de la Chambre Syndicale de la Haute Couture.</p>
     
-    <p>Pour rappel , les maisons qui possèdent l'appellation haute couture (appellation juridiquement controlé), sont des maisons de luxe qui correspondent aux critères suivants :</p>
+        </div>
+
+    </div>
     
-    <ul>
-        <li>Vêtements réalisés sur mesure</li>
-        <li>Travail à la main</li>
-        <li>Avoir un atelier de maison de couture, avec un atelier flou et un atelier tailleur</li>
-        <li>Les ateliers doivent compter une dizaine de personnes</li>
-        <li>Défiler deux fois par an , avec minimu 25 modèles par collection</li>
-        <li>Pour être accepté dans la liste des membres permanents, elle doit être déja inscrit en tant qu'invité depuis 4 ans et être parainée par une autre maison de couture</li>
-    </ul>
     
-    <p>Le statut haute couture n'existe qu'à Paris, valable qu'un an , et est accordé chaque par le ministère en charge de l'Industrie , sur proposition d'une liste de la Chambre Syndicale de la Haute Couture.</p>
     
 </section>
 
-<hr>
 
 <h2>Usage</h2>
 
+<p>Voici la liste exhaustif des requêtes que vous pouvez effectuez avec cette API :</p>  
+
 <section id="usage">
 
-    <p>Voici la liste exhaustif des requêtes que vous pouvez effectuez avec cette API :</p>  
+        Récupérer la liste toutes les maisons <br>
+
+        <li> get /api/maisons</li> <br> <br>
+    
+        Récupérer tous les maison dans une catégorie spécifique
+        
+        <li> get /api/maisons/category/{category} </li> <br> <br>
+        
+        
+        Récuperer la liste des maisons par pays 
+        
+        <li>get /api/maisons/country/{country} </li> <br> <br>
+        
+        Récupérer une maison aléatoirement 
+        
+        <li>get /api/maisons/random </li> <br> <br>
+        
+        
+        Récupérer une maison par son ID 
+        
+        <li>get /api/maisons/{id} </li> <br> <br>
+
+        Récupérer toutes les catégories 
+    
+        <li>get /api/categories</li>
 
 
-    Récupérer la liste toutes les maisons 
-    
-    <li> get /api/maisons</li>
-    
-    Récupérer tous les maison dans une catégorie spécifique </li> <br> <br>
-    
-    <li> get /api/maisons/category/{category} </li> <br> <br>
-    
-    
-    Récuperer la liste des maisons par pays 
-    
-    <li>get /api/maisons/country/{country} </li> <br> <br>
-    
-    Récupérer une maison aléatoirement 
-    
-    <li>get /api/maisons/random </li> <br> <br>
-    
-    
-    Récupérer une maison par son ID 
-    
-    <li>get /api/maisons/{id} </li> <br> <br>
-    
-    
-    Récupérer la liste tous les directeurs artistiques (DA) 
+        Récupérer la liste tous les directeurs artistiques (DA) 
     
     <li>get /api/directors </li> <br> <br>
     
@@ -107,33 +115,34 @@
     Recupérer la liste des directeurs artistiques par pays 
     
     <li>get /api/directors/country/{country} </li> <br> <br>
-    
-    
-    Récupérer toutes les catégories 
-    
-    <li>get /api/categories</li> <br> <br> 
-    
 </section>
 
-<hr>
 
 <h2>Contributer</h2>
 
 <section id="contribuiting">
 
-    <h3>Français</h3> 
 
-    <p>Si vous souhaitez contribuez , vous pouvez ouvrir une issue. Il vous faudra plus de 5 maisons à rajouter pour ouvrir une PR.</p> 
+    <div class="last_p">
+            <div class="column">
+                <img src="assets/defile.jpeg" height="300px">
+            </div>
+            <div class="column">
+                <h3>Français</h3> 
 
-    <p>Avant de rajouter des maisons, vérifiez bien qu'elles ne sont pas déja dans la base.</p> 
-    <p>Les maisons doivent avoir les champs suivants : name, category, artistic_director, country</p> 
-
-    <h3>English</h3> 
-
-    <p>If you want to contribuite , you can open an PR. 5 maison is the minimum to add if you want to open a PR </p>
-    
-    <p> Check the data to see if the maisons you want to add are not already there.</p>
-    <p>Each maison must have theses fields : name, category, artistic_director, country</p> 
+                <p>Si vous souhaitez contribuez , vous pouvez ouvrir une issue. Il vous faudra plus de 5 maisons à rajouter pour ouvrir une PR.</p> 
+            
+                <p>Avant de rajouter des maisons, vérifiez bien qu'elles ne sont pas déja dans la base.</p> 
+                <p>Les maisons doivent avoir les champs suivants : name, category, artistic_director, country</p> 
+            
+                <h3>English</h3> 
+            
+                <p>If you want to contribuite , you can open an PR. 5 maison is the minimum to add if you want to open a PR </p>
+                
+                <p> Check the data to see if the maisons you want to add are not already there.</p>
+                <p>Each maison must have theses fields : name, category, artistic_director, country</p> 
+                </div>
+    </div>
         
 </section>
 
